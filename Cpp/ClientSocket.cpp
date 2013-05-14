@@ -7,12 +7,14 @@ class ClientSocket
 ClientSocket::ClientSocket()
 {
 	if(WSA_LOADED == false)
-	{ WSA_LOADED = true;
-
+	{ 
     WSADATA info;
+
     if (WSAStartup(MAKEWORD(2,0), &info)) {
       throw "Could not start WSA";
-	}
+	    WSA_LOADED = true;
+    }
+  }
 }
 
 ClientSocket::~ClientSocket();
