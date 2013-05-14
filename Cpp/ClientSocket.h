@@ -4,6 +4,7 @@
 #include <WinSock2.h>
 #include <string>
 typedef char byte;
+typedef std::string string;
 
 class ClientSocket
 {
@@ -15,7 +16,7 @@ public:
 	ClientSocket();
 	~ClientSocket();
 
-	connect(string host, int port);
+	connect(const string& host, int port);
 	void close();
 
 	int receive(byte * buffer, int read_len); 
