@@ -3,7 +3,7 @@
 
 #include <WinSock2.h>
 #include <string>
-typedef byte char
+typedef char byte;
 
 class ClientSocket
 {
@@ -16,7 +16,7 @@ public:
 	~ClientSocket();
 
 	connect(string host, int port);
-	close();
+	void close();
 
 	int receive(byte * buffer, int read_len); 
   int send(const byte * buffer,  int write_len);
